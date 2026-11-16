@@ -1,0 +1,27 @@
+# 
+# Copyright Jerily LTD. All Rights Reserved.
+# SPDX-FileCopyrightText: 2026 Neofytos Dimitriou (neo@jerily.cy)
+# SPDX-License-Identifier: MIT.
+# 
+
+package require tcltest 2
+namespace import ::tcltest::test
+lappend ::auto_path [file dirname [file dirname [file normalize [info script]]]]
+package require pure-tcl-aws-ssm 0.1.0
+set endpoint [lindex $argv 0]
+set argv {}
+set c [::aws::ssm::create [dict create region us-east-1 endpoint $endpoint aws_access_key_id test aws_secret_access_key test aws_session_token temporary-token]]
+test ssm-roundtrip {write, decrypt and delete a Unicode parameter} -body {
+    $c put_parameter /test/雪 "hello 😀" SecureString true
+    set p [$c get_parameter /test/雪 true]
+    $c delete_parameter /test/雪
+    list [dict get $p value] [dict get $p version]
+} -result {{hello 😀} 2}
+test ssm-validation {invalid flags and types fail locally} -body {
+    list [catch {$c put_parameter x y Wrong}] [catch {$c get_parameter x maybe}]
+} -result {1 1}
+
+$c destroy
+set failed $::tcltest::numTests(Failed)
+::tcltest::cleanupTests
+exit [expr {$failed > 0}]

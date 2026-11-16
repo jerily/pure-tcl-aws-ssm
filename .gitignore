@@ -1,0 +1,5 @@
+/build/
+/ttrek-venv/
+/ttrek-lock.json
+__pycache__/
+*.pyc
