@@ -5,5 +5,5 @@
 # 
 
 if {![package vsatisfies [package provide Tcl] 9.1-10]} {return}
-package ifneeded pure-tcl-aws-ssm 0.1.0 [list source [file join $dir library ssm.tcl]]
+package ifneeded pure-tcl-aws-ssm 0.1.1 [list source [file join $dir library ssm.tcl]]
 package ifneeded awsssm 1.0.19 [list source [file join $dir library ssm.tcl]]

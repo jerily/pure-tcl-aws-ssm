@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT.
 # 
 
-package require pure-tcl-aws-core 0.1.0
+package require pure-tcl-aws-core 1.0.0
 namespace eval ::aws::ssm {namespace path ::aws::core}
 ::aws::core::register ssm {put_parameter get_parameter delete_parameter}
 
@@ -27,5 +27,5 @@ proc ::aws::ssm::_delete_parameter {client name} {
     json $client AmazonSSM.DeleteParameter [dict create Name [list S $name]]
     return
 }
-package provide pure-tcl-aws-ssm 0.1.0
+package provide pure-tcl-aws-ssm 0.1.1
 package provide awsssm 1.0.19

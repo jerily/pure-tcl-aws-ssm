@@ -5,7 +5,7 @@ AWS SSM client implemented in Tcl 9.1. Its only package dependency is
 HTTP, JSON, XML, credentials and signing. No AWS C++ SDK is required.
 
 ```tcl
-package require pure-tcl-aws-ssm 0.1.0
+package require pure-tcl-aws-ssm 0.1.1
 set client [::aws::ssm::create {region us-east-1}]
 try {
     puts [$client get_parameter /example/name]
