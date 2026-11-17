@@ -27,5 +27,5 @@ proc ::aws::ssm::_delete_parameter {client name} {
     json $client AmazonSSM.DeleteParameter [dict create Name [list S $name]]
     return
 }
-package provide pure-tcl-aws-ssm 0.1.1
+package provide pure-tcl-aws-ssm 1.0.0
 package provide awsssm 1.0.19
