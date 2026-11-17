@@ -59,3 +59,12 @@ make test TCLSH=tclsh9.1
 
 Python 3 supplies local HTTP fixtures. Tests use fake credentials and do not
 contact AWS. They check requests, result formats, and error handling.
+
+## Install with ttrek
+
+If you do not have the ttrek client, get it from [ttrek.sh](https://ttrek.sh).
+Then install the package:
+
+```sh
+ttrek install pure-tcl-aws-ssm
+```
