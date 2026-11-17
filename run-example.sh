@@ -21,7 +21,7 @@ proc main {argv} {
     if {[info exists ::env(PACKAGE_SOURCE_DIR)]} {
         lappend ::auto_path $::env(PACKAGE_SOURCE_DIR) [file join $::env(PACKAGE_SOURCE_DIR) .. pure-tcl-aws-core]
     }
-    package require pure-tcl-aws-ssm 0.1.0
+    package require pure-tcl-aws-ssm 0.1.1
     set mode [lindex $argv 0]
     set arguments [lrange $argv 1 end]
     switch -- $mode {
