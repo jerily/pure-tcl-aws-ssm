@@ -1,6 +1,6 @@
 {
   "name": "pure-tcl-aws-ssm",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "Tcl client for AWS SSM, without the AWS C++ SDK.",
   "languages": [
@@ -28,7 +28,7 @@
     "default": [
       {
         "cmd": "download",
-        "url": "https://github.com/jerily/pure-tcl-aws-ssm/archive/refs/tags/v0.1.1.tar.gz"
+        "url": "https://github.com/jerily/pure-tcl-aws-ssm/archive/refs/tags/v1.0.0.tar.gz"
       },
       {
         "cmd": "unpack"

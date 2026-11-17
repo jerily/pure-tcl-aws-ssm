@@ -2,7 +2,7 @@ PREFIX ?= /usr/local
 DESTDIR ?=
 TCLSH ?= tclsh9.1
 PACKAGE = pure-tcl-aws-ssm
-VERSION = 0.1.1
+VERSION = 1.0.0
 .PHONY: all install test
 all:
 	@echo "Tcl package; no compilation required."
